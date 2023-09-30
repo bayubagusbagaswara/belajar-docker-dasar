@@ -101,5 +101,10 @@
 
 # Menghentikan Container
 
+- Sebelum menghapus sebuah container, maka kita perlu dahulu menghentikan container yang berjalan.
 - Untuk menghentikan container, kita bisa gunakan perintah : `docker container stop containerId/namacontainer`
 - contoh stop container dengan menggunakan nama container : `docker container stop contohredis`
+
+# Menghapus Container
+
+- Untuk menghapus container yang sudah berhenti, kita bisa menggunakan perintah : `docker container rm containerId/namacontainer`
