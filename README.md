@@ -42,5 +42,64 @@
 
 # Docker Registry
 
-- Docker Registry adalah tempat kita menyimpan Docker Image
-- Dengan menggunakan Docker Registry, kita bisa menyimpan Image yang kita buat, dan bisa digunakan di Docker Daemon dimanapun selama bisa terkoneksi ke Docker Registry
+- Docker Registry adalah `tempat kita menyimpan Docker Image`
+- Dengan menggunakan Docker Registry, kita bisa menyimpan Image yang kita buat, dan bisa digunakan di Docker Daemon dimanapun `selama bisa terkoneksi` ke Docker Registry
+- misal di cloud kita install Docker, maka docker yang ada di cloud tinggal mengambil image dari docker registry
+
+## Contoh Docker Registry
+
+- Docker Hub
+- Digital Ocean Container Registry
+- Google Cloud Container Registry
+- Amazon Elastic Container Registry
+- Azure Container Registry
+
+# Docker Image
+
+- Docker Image mirip seperti installer aplikasi, dimana di dalam Docker Image terdapat aplikasi dan dependency
+- Sebelum kita bisa menjalankan aplikasi di Docker, kita perlu memastikan memiliki Docker Image aplikasi tersebut
+
+# Melihat Docker Image
+
+- Docker Image akan di download, lalu disimpan kedalam server nya
+- Untuk melihat Docker Image yang terdapat di dalam Docker Daemon, kita bisa menggunakan `docker image ls`
+
+# Download Docker Image
+
+- Untuk download Docker Image dari Docker Registry, kita bisa gunakan perintah: `docker image pull nameimage:tag`
+- Kita bisa mencari Docker Image yang ingin kita download di https://hub.docker.com/
+- contoh : docker image pull redis:latest
+
+# Menghapus Docker Image
+
+- Perintah : `docker image rm namaimage:tag`
+
+# Docker Container
+
+- Setelah kita buat docker container nya, maka kita tidak bisa menghapus docker image nya. Dikarenanakan sebenarnya Docker Container tidak meng-copy isi Docker Image, tapi hanya menggunakan isinya saja
+
+# Status Container
+
+- Saat kita membuat container, secara default container tersebut tidak akan berjalan
+- Mirip seperti kita menginstall aplikasi. Jika tidak kita jalankan, maka aplikasi tersebut tidak akan berjalan, begitu juga container
+- Oleh karena itu, setelah membuat container kita perlu menjalankannya jika memang ingin menjalankan container nya
+
+# Melihat Container
+
+- Untuk melihat semua container, baik yang sedang berjalan atau tidak di Docker Daemon, kita bisa gunakan perintah: `docker container ls -a`
+- Sedangkan jika kita ingin melihat container yang `sedang berjalan saja`, kita bisa gunakan perintah : `docker container ls`
+
+# Membuat Container
+
+- Untuk membuat container, kita bisa gunakan perintah : `docker container create --name namacontainer namaimage:tag`
+- Contoh: `docker container create --name contohredis redis:lates`
+
+# Menjalankan Container
+
+- Untuk menjalankan container yang sudah kita buat, kita busa gunakan perintah: `docker container start containerId/namacontainer`
+- contoh running container dengan menggunakan nama container : `docker container start contohredis`
+
+# Menghentikan Container
+
+- Untuk menghentikan container, kita bisa gunakan perintah : `docker container stop containerId/namacontainer`
+- contoh stop container dengan menggunakan nama container : `docker container stop contohredis`
