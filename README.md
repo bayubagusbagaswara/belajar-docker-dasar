@@ -92,7 +92,7 @@
 # Membuat Container
 
 - Untuk membuat container, kita bisa gunakan perintah : `docker container create --name namacontainer namaimage:tag`
-- Contoh: `docker container create --name contohredis redis:lates`
+- Contoh: `docker container create --name contohredis redis:latest`
 
 # Menjalankan Container
 
