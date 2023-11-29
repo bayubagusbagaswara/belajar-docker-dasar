@@ -12,3 +12,8 @@
 # Membuat Volume
 
 - Untuk membuat volume, kita bisa gunakan perintah: `docker volume create mongovolume`
+
+# Menghapus Volume
+
+- Volume yang tidak digunakan oleh container bisa kita hapus. Tetapi jika volume digunakan oleh container, maka tidak bisa kita hapus sampai container nya di hapus
+- Untuk menghapus volume, kita bisa gunakan perintah: `docker volume rm namavolume`
